@@ -30,7 +30,7 @@ To build an accurate and interpretable classification model that predicts the li
 
 ---
 
-## ⚙ Project Workflow
+##  Project Workflow
 
 ### 1.  Exploratory Data Analysis (EDA)
 - Data types and null value checks
