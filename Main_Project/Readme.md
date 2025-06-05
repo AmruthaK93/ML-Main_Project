@@ -31,15 +31,16 @@ To build an accurate and interpretable classification model that predicts the li
 
 ##  Project Workflow
 
-### 1.  Exploratory Data Analysis (EDA)
+### 1.  Data Cleaning 
 - Data types and null value checks
 - Summary statistics and target balance
-- Visualizations: distributions, correlations, default rates
 
-### 2.  Data Cleaning
+
+### 2.  Exploratory Data Analysis (EDA)
 - Removed invalid/unknown categories
 - Checked outliers and value ranges
 - Ensured correct data types
+- Visualizations: distributions, correlations, default rates
 
 ### 3.  Feature Engineering
 - Separated features (`X`) and target (`y`)
@@ -49,25 +50,30 @@ To build an accurate and interpretable classification model that predicts the li
 ### 4.  Train-Test Split
 - Performed an 80/20 split with stratification on the `DEFAULT` column
 
-### 5.  ML Pipeline
-Built a `Pipeline` that handles:
-- **Missing values**: `SimpleImputer(strategy='mean')`
-- **Scaling**: `StandardScaler()`
-- **Model**: `GradientBoostingClassifier()`
+### 5. Best Model
+- **Model:** GradientBoostingClassifier
+- **Accuracy:** ~82% (after tuning)
+- **ROC AUC:** ~0.77
 
 ### 6.  Hyperparameter Tuning
 - Used `GridSearchCV` with 5-fold cross-validation
 - Tuned parameters like `n_estimators`, `learning_rate`, `max_depth`, etc.
 - Chose the best model based on cross-validated accuracy
 
-### 7.  Model Evaluation
+### 7.  ML Pipeline
+Built a `Pipeline` that handles:
+- **Missing values**: `SimpleImputer(strategy='mean')`
+- **Scaling**: `StandardScaler()`
+- **Model**: `GradientBoostingClassifier()`
+
+### 8.  Model Evaluation
 Evaluated the tuned model on the test set using:
 - Accuracy score
 - Confusion matrix (visualized with `seaborn`)
 - Classification report (precision, recall, F1)
 - ROC Curve and AUC score
 
-### 8.  Model Saving & Deployment
+### 9.  Model Saving & Deployment
 - Saved the final pipeline with `joblib`
 - Reloaded pipeline and predicted on a sample row
 - Confirmed the pipeline handles end-to-end prediction
