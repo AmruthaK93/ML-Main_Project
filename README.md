@@ -55,16 +55,16 @@ To build an accurate and interpretable classification model that predicts the li
 - **Accuracy:** ~82% (after tuning)
 - **ROC AUC:** ~0.77
 
-### 6.  ML Pipeline
+### 6.  Hyperparameter Tuning
+- Used `GridSearchCV` with 5-fold cross-validation
+- Tuned parameters like `n_estimators`, `learning_rate`, `max_depth`, etc.
+- Chose the best model based on cross-validated accuracy
+
+### 7.  ML Pipeline
 Built a `Pipeline` that handles:
 - **Missing values**: `SimpleImputer(strategy='mean')`
 - **Scaling**: `StandardScaler()`
 - **Model**: `GradientBoostingClassifier()`
-
-### 7.  Hyperparameter Tuning
-- Used `GridSearchCV` with 5-fold cross-validation
-- Tuned parameters like `n_estimators`, `learning_rate`, `max_depth`, etc.
-- Chose the best model based on cross-validated accuracy
 
 ### 8.  Model Evaluation
 Evaluated the tuned model on the test set using:
