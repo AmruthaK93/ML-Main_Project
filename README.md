@@ -32,16 +32,16 @@ To build an accurate and interpretable classification model that predicts the li
 
 ##  Project Workflow
 
-### 1.  Exploratory Data Analysis (EDA)
+### 1.  Data Cleaning
 - Data types and null value checks
 - Summary statistics and target balance
-- Visualizations: distributions, correlations, default rates
 
-### 2.  Data Cleaning
+### 2.  Exploratory Data Analysis (EDA)
 - Removed invalid/unknown categories
 - Checked outliers and value ranges
 - Ensured correct data types
-
+- Visualizations: distributions, correlations, default rates
+  
 ### 3.  Feature Engineering
 - Separated features (`X`) and target (`y`)
 - Applied `SelectKBest` (ANOVA F-test) to evaluate feature relevance
